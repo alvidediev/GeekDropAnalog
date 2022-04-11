@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="ProjectModuleManager">
+    <modules>
+      <module fileurl="file://$PROJECT_DIR$/GeekDropAnalog/GeekDropAnalog.iml" filepath="$PROJECT_DIR$/GeekDropAnalog/GeekDropAnalog.iml" />
+      <module fileurl="file://$PROJECT_DIR$/GeekDropAnalog/GeekDropClient/GeekDropClient.iml" filepath="$PROJECT_DIR$/GeekDropAnalog/GeekDropClient/GeekDropClient.iml" />
+      <module fileurl="file://$PROJECT_DIR$/GeekDropAnalog/GeekDropServer/GeekDropServer.iml" filepath="$PROJECT_DIR$/GeekDropAnalog/GeekDropServer/GeekDropServer.iml" />
+    </modules>
+  </component>
+</project>
