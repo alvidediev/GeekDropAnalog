@@ -1,0 +1,46 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.layout.Pane?>
+<?import javafx.scene.text.Font?>
+
+<AnchorPane prefHeight="380.0" prefWidth="440.0" styleClass="parent" stylesheets="@css/registerwindowstyles.css" xmlns="http://javafx.com/javafx/18" xmlns:fx="http://javafx.com/fxml/1" fx:controller="ru.dediev.geekdrop.geekdropclient.RegisterWindowController">
+   <children>
+      <Pane layoutX="-1.0" layoutY="-2.0" prefHeight="380.0" prefWidth="440.0">
+         <children>
+            <HBox layoutX="94.0" layoutY="64.0" prefHeight="30.0" prefWidth="250.0">
+               <children>
+                  <TextField alignment="CENTER" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="30.0" prefWidth="251.0" promptText="Please, enter your login" styleClass="txt-field">
+                     <font>
+                        <Font name="Arial Italic" size="12.0" />
+                     </font>
+                  </TextField>
+               </children>
+            </HBox>
+            <HBox layoutX="94.0" layoutY="113.0" prefHeight="30.0" prefWidth="250.0">
+               <children>
+                  <TextField alignment="CENTER" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="30.0" prefWidth="251.0" promptText="Please, enter your e-mail" styleClass="txt-field">
+                     <font>
+                        <Font name="Arial Italic" size="12.0" />
+                     </font>
+                  </TextField>
+               </children>
+            </HBox>
+            <HBox layoutX="94.0" layoutY="167.0" prefHeight="30.0" prefWidth="250.0" styleClass="txt-field">
+               <children>
+                  <TextField alignment="CENTER" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="30.0" prefWidth="251.0" promptText="Please, enter your password" styleClass="txt-field">
+                     <font>
+                        <Font name="Arial Italic" size="12.0" />
+                     </font>
+                  </TextField>
+               </children>
+            </HBox>
+            <Button layoutX="159.0" layoutY="216.0" mnemonicParsing="false" prefHeight="25.0" prefWidth="129.0" styleClass="btn" text="Регистрация" />
+            <Button fx:id="fromRegisterWindowToLoginBtn" layoutX="159.0" layoutY="256.0" mnemonicParsing="false" onAction="#fromRegisterWindowToLogin" prefHeight="25.0" prefWidth="129.0" styleClass="btn" text="Войти" />
+         </children>
+      </Pane>
+   </children>
+</AnchorPane>
