@@ -16,7 +16,7 @@
          <children>
             <HBox layoutX="94.0" layoutY="167.0" prefHeight="30.0" prefWidth="250.0" styleClass="txt-field">
                <children>
-                  <TextField alignment="CENTER" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="30.0" prefWidth="251.0" promptText="Please, enter your password" styleClass="txt-field">
+                  <TextField alignment="CENTER" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="30.0" prefWidth="251.0" promptText="Password" styleClass="txt-field">
                      <font>
                         <Font name="Arial Italic" size="12.0" />
                      </font>
@@ -25,7 +25,7 @@
             </HBox>
             <Button fx:id="registerBtn" layoutX="157.0" layoutY="259.0" mnemonicParsing="false" onAction="#toRegisterWindow" prefHeight="25.0" prefWidth="129.0" styleClass="btn" text="Регистрация" />
             <Button fx:id="loginButton" layoutX="157.0" layoutY="216.0" mnemonicParsing="false" onAction="#login" prefHeight="25.0" prefWidth="129.0" styleClass="btn" text="Войти" />
-            <TextField alignment="CENTER" layoutX="94.0" layoutY="129.0" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="30.0" prefWidth="251.0" promptText="Please, enter your login" styleClass="txt-field">
+            <TextField alignment="CENTER" layoutX="94.0" layoutY="129.0" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="30.0" prefWidth="251.0" promptText="Login" styleClass="txt-field">
                <font>
                   <Font name="Arial Italic" size="12.0" />
                </font>

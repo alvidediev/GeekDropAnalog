@@ -1,6 +1,7 @@
 package ru.dediev.geekdrop.geekdropclient;
 
 import javafx.event.ActionEvent;
+import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
 import javafx.scene.Parent;
 import javafx.scene.Scene;
@@ -10,8 +11,10 @@ import javafx.stage.Stage;
 
 import java.io.IOException;
 
-public class BeiginingWindowController {
+public class BeginingWindowController {
+    @FXML
     public Button toLoginWindow;
+    @FXML
     public Button to_register_window;
 
     public void login_window(ActionEvent actionEvent) throws IOException {
@@ -20,6 +23,7 @@ public class BeiginingWindowController {
         FXMLLoader fxmlLoader = new FXMLLoader(getClass().getResource("loginWindow.fxml"));
         Parent root1 = fxmlLoader.load();
         stage = new Stage();
+        stage.setResizable(false);
         stage.initModality(Modality.APPLICATION_MODAL);
         stage.setTitle("Вход");
         stage.setScene(new Scene(root1));
@@ -32,6 +36,7 @@ public class BeiginingWindowController {
         FXMLLoader fxmlLoader = new FXMLLoader(getClass().getResource("registerWindow.fxml"));
         Parent root1 = fxmlLoader.load();
         stage = new Stage();
+        stage.setResizable(false);
         stage.initModality(Modality.APPLICATION_MODAL);
         stage.setTitle("Регистрация");
         stage.setScene(new Scene(root1));
