@@ -10,7 +10,8 @@ import javafx.scene.control.TextField;
 import javafx.stage.Modality;
 import javafx.stage.Stage;
 
-import java.io.IOException;
+import java.io.*;
+import java.util.Arrays;
 
 public class RegisterWindowController {
     @FXML
@@ -22,6 +23,10 @@ public class RegisterWindowController {
     @FXML
     public Button regInDb;
 
+    ClientHandler client = new ClientHandler();
+
+
+    //Форма перехода между окнами: с окна регистрации на окно входа
     public void fromRegisterWindowToLogin(ActionEvent actionEvent) throws IOException {
         Stage stage = (Stage) fromRegisterWindowToLoginBtn.getScene().getWindow();
         stage.close();
@@ -35,7 +40,15 @@ public class RegisterWindowController {
         stage.show();
     }
 
+    /** Форма регистрации. Из полей ввода логина и пароля берется текст, к ним в начало добавляется ключевое
+     * слово "/register". На сервер есть обработчик событий, который прочитал ключевое слово поймет, что данные
+     * логин и пароль нужно занести в базу.
+     */
     public void regInDbAction(ActionEvent actionEvent) {
-
+        String messageData = "/register" + " " + loginField.getText() + " " + passwordField.getText();
+        String[] mesash = messageData.split(" ");
+        System.out.println(Arrays.toString(mesash));
+        System.out.println(messageData);
+        client.sendRegisterData(messageData);
     }
 }
