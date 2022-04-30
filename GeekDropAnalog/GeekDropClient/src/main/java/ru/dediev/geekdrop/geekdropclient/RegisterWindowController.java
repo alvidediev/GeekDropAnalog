@@ -9,6 +9,7 @@ import javafx.scene.control.Button;
 import javafx.scene.control.TextField;
 import javafx.stage.Modality;
 import javafx.stage.Stage;
+import ru.dediev.geekdrop.geekdropclient.Exceptions.PleaseEnterAllData;
 
 import java.io.*;
 import java.util.Arrays;
@@ -45,10 +46,18 @@ public class RegisterWindowController {
      * логин и пароль нужно занести в базу.
      */
     public void regInDbAction(ActionEvent actionEvent) {
-        String messageData = "/register" + " " + loginField.getText() + " " + passwordField.getText();
-        String[] mesash = messageData.split(" ");
-        System.out.println(Arrays.toString(mesash));
-        System.out.println(messageData);
-        client.sendRegisterData(messageData);
+        if(loginField.getText() != null && passwordField.getText() != null){
+            String messageData = "/register" + " " + loginField.getText() + " " + passwordField.getText();
+            String[] mesash = messageData.split(" ");
+            System.out.println(Arrays.toString(mesash));
+            System.out.println(messageData);
+            client.sendRegisterData(messageData);
+        }else{
+            try {
+                throw new PleaseEnterAllData("Не заполнены все поля");
+            } catch (PleaseEnterAllData e) {
+                e.printStackTrace();
+            }
+        }
     }
 }

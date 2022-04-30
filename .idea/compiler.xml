@@ -13,7 +13,7 @@
     <bytecodeTargetLevel>
       <module name="GeekDropAnalog" target="1.7" />
       <module name="GeekDropClient" target="11" />
-      <module name="GeekDropServer" target="1.7" />
+      <module name="GeekDropServer" target="9" />
     </bytecodeTargetLevel>
   </component>
 </project>
