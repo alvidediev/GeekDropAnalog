@@ -9,12 +9,13 @@ import javafx.scene.control.Button;
 import javafx.scene.control.TextField;
 import javafx.stage.Modality;
 import javafx.stage.Stage;
-import ru.dediev.geekdrop.geekdropclient.Exceptions.PleaseEnterAllData;
+import ru.dediev.geekdrop.geekdropclient.Controllers.NetworkConnector;
 
-import java.io.*;
-import java.util.Arrays;
+import java.io.IOException;
 
 public class RegisterWindowController {
+    NetworkConnector networker = new NetworkConnector();
+
     @FXML
     public Button fromRegisterWindowToLoginBtn;
     @FXML
@@ -23,9 +24,6 @@ public class RegisterWindowController {
     public TextField loginField;
     @FXML
     public Button regInDb;
-
-    ClientHandler client = new ClientHandler();
-
 
     //Форма перехода между окнами: с окна регистрации на окно входа
     public void fromRegisterWindowToLogin(ActionEvent actionEvent) throws IOException {
@@ -46,18 +44,7 @@ public class RegisterWindowController {
      * логин и пароль нужно занести в базу.
      */
     public void regInDbAction(ActionEvent actionEvent) {
-        if(loginField.getText() != null && passwordField.getText() != null){
-            String messageData = "/register" + " " + loginField.getText() + " " + passwordField.getText();
-            String[] mesash = messageData.split(" ");
-            System.out.println(Arrays.toString(mesash));
-            System.out.println(messageData);
-            client.sendRegisterData(messageData);
-        }else{
-            try {
-                throw new PleaseEnterAllData("Не заполнены все поля");
-            } catch (PleaseEnterAllData e) {
-                e.printStackTrace();
-            }
-        }
+            networker.sendMessage(loginField.getText());
+
     }
 }
