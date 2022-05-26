@@ -11,7 +11,7 @@ import io.netty.handler.codec.string.StringDecoder;
 import io.netty.handler.codec.string.StringEncoder;
 
 public class NetworkConnector {
-    private static final int PORT = 9999;
+    private static final int PORT = 8888;
     private static final String LOCAL_HOST = "localhost";
 
 

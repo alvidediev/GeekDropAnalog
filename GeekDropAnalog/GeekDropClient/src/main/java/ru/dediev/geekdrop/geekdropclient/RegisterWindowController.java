@@ -12,8 +12,10 @@ import javafx.stage.Stage;
 import ru.dediev.geekdrop.geekdropclient.Controllers.NetworkConnector;
 
 import java.io.IOException;
+import java.util.Arrays;
 
 public class RegisterWindowController {
+    public TextField nickNameField;
     NetworkConnector networker = new NetworkConnector();
 
     @FXML
@@ -39,12 +41,13 @@ public class RegisterWindowController {
         stage.show();
     }
 
-    /** Форма регистрации. Из полей ввода логина и пароля берется текст, к ним в начало добавляется ключевое
+    /**
+     * Форма регистрации. Из полей ввода логина и пароля берется текст, к ним в начало добавляется ключевое
      * слово "/register". На сервер есть обработчик событий, который прочитал ключевое слово поймет, что данные
      * логин и пароль нужно занести в базу.
      */
     public void regInDbAction(ActionEvent actionEvent) {
-            networker.sendMessage(loginField.getText());
-
+        String s = "/" + " " + loginField.getText() + " " + passwordField.getText() + " " + nickNameField.getText();
+        networker.sendMessage(s);
     }
 }
