@@ -1,9 +1,12 @@
 package ru.dediev.geekdrop.server;
 
 import io.netty.buffer.ByteBuf;
+import io.netty.channel.ChannelFuture;
+import io.netty.channel.ChannelFutureListener;
 import io.netty.channel.ChannelHandlerContext;
 import io.netty.channel.ChannelInboundHandlerAdapter;
 import ru.dediev.geekdrop.base.BaseHandler;
+import ru.dediev.geekdrop.model.UsersData;
 
 import java.util.Arrays;
 
@@ -12,10 +15,10 @@ import java.util.Arrays;
  * регистрации пользователей.
  * После наследования ChannelInboundHandlerAdapter выбраны 3 сетода для переопределения, это:
  * channelActive, channelRead, exceptionCaught.
- *
+ * <p>
  * Creator: Alvi Dediev.
  */
-public class ClientsRegistrationHandler extends ChannelInboundHandlerAdapter {
+public class ServerHandler extends ChannelInboundHandlerAdapter {
     BaseHandler baseHandler = new BaseHandler();
 
     @Override
@@ -25,16 +28,11 @@ public class ClientsRegistrationHandler extends ChannelInboundHandlerAdapter {
 
     @Override
     public void channelRead(ChannelHandlerContext ctx, Object msg) throws Exception {
-        ByteBuf buffer = (ByteBuf) msg;
-        while(buffer.isReadable()){
-            String s1 = buffer.toString();
-            System.out.println(s1);
-//            char c = (char) buffer.readByte();
-//            String s = String.valueOf(c);
-//            String[] split = s.split(" ");
-//            System.out.print(Arrays.toString(split));
-        }
-        buffer.release();
+        UsersData message = (UsersData) msg;
+        System.out.println("Message from client " + message);
+
+        ChannelFuture future = ctx.writeAndFlush("ok\n");
+        future.addListener(ChannelFutureListener.CLOSE);
     }
 
     @Override

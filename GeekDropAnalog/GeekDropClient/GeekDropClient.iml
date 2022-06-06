@@ -11,6 +11,9 @@
     <orderEntry type="jdk" jdkName="corretto-11" jdkType="JavaSDK" />
     <orderEntry type="sourceFolder" forTests="false" />
     <orderEntry type="library" name="de.jensd.fontawesomefx" level="project" />
+    <orderEntry type="library" name="Maven: com.fasterxml.jackson.core:jackson-databind:2.13.3" level="project" />
+    <orderEntry type="library" name="Maven: com.fasterxml.jackson.core:jackson-annotations:2.13.3" level="project" />
+    <orderEntry type="library" name="Maven: com.fasterxml.jackson.core:jackson-core:2.13.3" level="project" />
     <orderEntry type="library" name="Maven: org.webjars.bower:fontawesome:4.7.0" level="project" />
     <orderEntry type="library" name="Maven: io.netty:netty-all:4.1.76.Final" level="project" />
     <orderEntry type="library" name="Maven: io.netty:netty-buffer:4.1.76.Final" level="project" />

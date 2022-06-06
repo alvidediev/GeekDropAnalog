@@ -9,5 +9,7 @@ module ru.dediev.geekdrop.geekdropclient {
     requires io.netty.buffer;
     requires io.netty.transport;
     requires io.netty.codec;
+    requires com.fasterxml.jackson.databind;
+    requires io.netty.common;
     exports ru.dediev.geekdrop.geekdropclient;
 }

@@ -1,4 +1,4 @@
-package ru.dediev.geekdrop.geekdropclient.Exceptions;
+package ru.dediev.geekdrop.geekdropclient.exceptions;
 
 public class PleaseEnterAllData extends Exception{
     public PleaseEnterAllData(String message) {

@@ -5,7 +5,7 @@ import javafx.fxml.FXMLLoader;
 import javafx.fxml.Initializable;
 import javafx.scene.Scene;
 import javafx.stage.Stage;
-import ru.dediev.geekdrop.geekdropclient.Controllers.NetworkConnector;
+import ru.dediev.geekdrop.geekdropclient.network.NetworkConnector;
 
 import java.io.IOException;
 import java.net.URL;
