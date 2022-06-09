@@ -1,6 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
 <?import javafx.scene.control.Button?>
+<?import javafx.scene.control.PasswordField?>
 <?import javafx.scene.control.TextField?>
 <?import javafx.scene.image.Image?>
 <?import javafx.scene.image.ImageView?>
@@ -9,35 +10,50 @@
 <?import javafx.scene.layout.Pane?>
 <?import javafx.scene.text.Font?>
 
-<AnchorPane prefHeight="380.0" prefWidth="440.0" styleClass="parent" stylesheets="@css/registerwindowstyles.css" xmlns="http://javafx.com/javafx/18" xmlns:fx="http://javafx.com/fxml/1" fx:controller="ru.dediev.geekdrop.geekdropclient.RegisterWindowController">
+<AnchorPane prefHeight="680.0" prefWidth="840.0" styleClass="parent" stylesheets="@css/registerwindowstyles.css" xmlns="http://javafx.com/javafx/18" xmlns:fx="http://javafx.com/fxml/1" fx:controller="ru.dediev.geekdrop.geekdropclient.RegisterWindowController">
    <children>
-      <Pane layoutX="-1.0" layoutY="-2.0" prefHeight="380.0" prefWidth="440.0">
+      <Pane layoutX="-1.0" layoutY="-2.0" prefHeight="687.0" prefWidth="846.0">
          <children>
-            <HBox layoutX="94.0" layoutY="130.0" prefHeight="30.0" prefWidth="250.0">
+            <HBox layoutX="284.0" layoutY="314.0" prefHeight="44.0" prefWidth="273.0">
                <children>
-                  <TextField fx:id="loginField" alignment="CENTER" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="30.0" prefWidth="251.0" promptText="Your login" styleClass="txt-field">
+                  <TextField fx:id="loginField" alignment="CENTER" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="44.0" prefWidth="273.0" promptText="Your login" styleClass="txt-field">
                      <font>
-                        <Font name="Arial Italic" size="12.0" />
+                        <Font name="Arial Italic" size="18.0" />
                      </font>
                   </TextField>
                </children>
             </HBox>
-            <HBox layoutX="94.0" layoutY="167.0" prefHeight="30.0" prefWidth="250.0" styleClass="txt-field">
+            <HBox layoutX="284.0" layoutY="386.0" prefHeight="44.0" prefWidth="273.0" styleClass="txt-field">
                <children>
-                  <TextField fx:id="passwordField" alignment="CENTER" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="30.0" prefWidth="251.0" promptText="Your password" styleClass="txt-field">
+                  <PasswordField fx:id="passwordField" alignment="CENTER" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="44.0" prefWidth="273.0" promptText="Password" styleClass="txt-field">
                      <font>
-                        <Font name="Arial Italic" size="12.0" />
+                        <Font name="Arial Italic" size="18.0" />
                      </font>
-                  </TextField>
+                  </PasswordField>
                </children>
             </HBox>
-            <Button fx:id="regInDb" layoutX="159.0" layoutY="216.0" mnemonicParsing="false" onAction="#regInDbAction" prefHeight="25.0" prefWidth="129.0" styleClass="btn" text="Регистрация" />
-            <Button fx:id="fromRegisterWindowToLoginBtn" layoutX="159.0" layoutY="256.0" mnemonicParsing="false" onAction="#fromRegisterWindowToLogin" prefHeight="25.0" prefWidth="129.0" styleClass="btn" text="Войти" />
-            <ImageView fitHeight="109.0" fitWidth="163.0" layoutX="164.0" layoutY="14.0" pickOnBounds="true" preserveRatio="true">
+            <Button fx:id="regInDb" layoutX="346.0" layoutY="535.0" mnemonicParsing="false" onAction="#regInDbAction" prefHeight="36.0" prefWidth="150.0" styleClass="btn" text="Регистрация">
+               <font>
+                  <Font size="14.0" />
+               </font></Button>
+            <Button fx:id="fromRegisterWindowToLoginBtn" layoutX="348.0" layoutY="605.0" mnemonicParsing="false" onAction="#fromRegisterWindowToLogin" prefHeight="36.0" prefWidth="150.0" styleClass="btn" text="Войти">
+               <font>
+                  <Font size="14.0" />
+               </font></Button>
+            <ImageView fitHeight="189.0" fitWidth="194.0" layoutX="326.0" layoutY="76.0" pickOnBounds="true" preserveRatio="true">
                <image>
                   <Image url="@img/box.png" />
                </image>
             </ImageView>
+            <HBox layoutX="286.0" layoutY="458.0" prefHeight="44.0" prefWidth="273.0">
+               <children>
+                  <TextField fx:id="nickNameField" alignment="CENTER" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="44.0" prefWidth="273.0" promptText="Your nickname" styleClass="txt-field">
+                     <font>
+                        <Font name="Arial Italic" size="18.0" />
+                     </font>
+                  </TextField>
+               </children>
+            </HBox>
          </children>
       </Pane>
    </children>

@@ -9,11 +9,14 @@ import javafx.scene.control.Button;
 import javafx.scene.control.TextField;
 import javafx.stage.Modality;
 import javafx.stage.Stage;
+import ru.dediev.geekdrop.geekdropclient.model.Message;
+import ru.dediev.geekdrop.geekdropclient.network.NetworkConnector;
 
-import java.io.*;
-import java.util.Arrays;
+import java.io.IOException;
 
 public class RegisterWindowController {
+    @FXML
+    public TextField nickNameField;
     @FXML
     public Button fromRegisterWindowToLoginBtn;
     @FXML
@@ -23,8 +26,8 @@ public class RegisterWindowController {
     @FXML
     public Button regInDb;
 
-    ClientHandler client = new ClientHandler();
 
+    NetworkConnector network = new NetworkConnector();
 
     //Форма перехода между окнами: с окна регистрации на окно входа
     public void fromRegisterWindowToLogin(ActionEvent actionEvent) throws IOException {
@@ -40,15 +43,16 @@ public class RegisterWindowController {
         stage.show();
     }
 
-    /** Форма регистрации. Из полей ввода логина и пароля берется текст, к ним в начало добавляется ключевое
+    /**
+     * Форма регистрации. Из полей ввода логина и пароля берется текст, к ним в начало добавляется ключевое
      * слово "/register". На сервер есть обработчик событий, который прочитал ключевое слово поймет, что данные
      * логин и пароль нужно занести в базу.
      */
     public void regInDbAction(ActionEvent actionEvent) {
-        String messageData = "/register" + " " + loginField.getText() + " " + passwordField.getText();
-        String[] mesash = messageData.split(" ");
-        System.out.println(Arrays.toString(mesash));
-        System.out.println(messageData);
-        client.sendRegisterData(messageData);
+        Message clientData = new Message(nickNameField.getText(),
+                passwordField.getText(), loginField.getText());
+
+        System.out.println(clientData.getLogin() + " " + clientData.getName() + " " + clientData.getPassword());
+        network.send(clientData, s -> System.out.println("s + " + s));
     }
 }
