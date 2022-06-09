@@ -2,13 +2,13 @@ package ru.dediev.geekdrop.model;
 
 import java.util.Objects;
 
-public class UsersData {
+public class Message {
 
     private String name;
     private String password;
     private String login;
 
-    public UsersData(String name, String password, String login) {
+    public Message(String name, String password, String login) {
         this.name = name;
         this.password = password;
         this.login = login;
@@ -42,8 +42,8 @@ public class UsersData {
     public boolean equals(Object o) {
         if (this == o) return true;
         if (o == null || getClass() != o.getClass()) return false;
-        UsersData usersData = (UsersData) o;
-        return Objects.equals(name, usersData.name) && Objects.equals(password, usersData.password) && Objects.equals(login, usersData.login);
+        Message message = (Message) o;
+        return Objects.equals(name, message.name) && Objects.equals(password, message.password) && Objects.equals(login, message.login);
     }
 
     @Override

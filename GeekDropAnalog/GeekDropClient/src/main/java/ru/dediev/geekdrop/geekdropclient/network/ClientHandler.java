@@ -2,16 +2,16 @@ package ru.dediev.geekdrop.geekdropclient.network;
 
 import io.netty.channel.ChannelHandlerContext;
 import io.netty.channel.ChannelInboundHandlerAdapter;
-import ru.dediev.geekdrop.geekdropclient.model.UsersDataFromClient;
+import ru.dediev.geekdrop.geekdropclient.model.Message;
 
 import java.util.function.Consumer;
 
 public class ClientHandler extends ChannelInboundHandlerAdapter {
 
-    private final UsersDataFromClient message;
+    private final Message message;
     private final Consumer<String> consumer;
 
-    public ClientHandler(UsersDataFromClient message, Consumer<String> consumer) {
+    public ClientHandler(Message message, Consumer<String> consumer) {
         this.message = message;
         this.consumer = consumer;
     }

@@ -2,16 +2,16 @@ package ru.dediev.geekdrop.geekdropclient.model;
 
 import java.util.Objects;
 
-public class UsersDataFromClient {
+public class Message {
 
     private String name;
     private String password;
     private String login;
 
-    public UsersDataFromClient() {
+    public Message() {
     }
 
-    public UsersDataFromClient(String name, String password, String login) {
+    public Message(String name, String password, String login) {
         this.name = name;
         this.password = password;
         this.login = login;
@@ -45,7 +45,7 @@ public class UsersDataFromClient {
     public boolean equals(Object o) {
         if (this == o) return true;
         if (o == null || getClass() != o.getClass()) return false;
-        UsersDataFromClient usersData = (UsersDataFromClient) o;
+        Message usersData = (Message) o;
         return Objects.equals(name, usersData.name) && Objects.equals(password, usersData.password) && Objects.equals(login, usersData.login);
     }
 

@@ -9,7 +9,7 @@ import javafx.scene.control.Button;
 import javafx.scene.control.TextField;
 import javafx.stage.Modality;
 import javafx.stage.Stage;
-import ru.dediev.geekdrop.geekdropclient.model.UsersDataFromClient;
+import ru.dediev.geekdrop.geekdropclient.model.Message;
 import ru.dediev.geekdrop.geekdropclient.network.NetworkConnector;
 
 import java.io.IOException;
@@ -49,7 +49,7 @@ public class RegisterWindowController {
      * логин и пароль нужно занести в базу.
      */
     public void regInDbAction(ActionEvent actionEvent) {
-        UsersDataFromClient clientData = new UsersDataFromClient(nickNameField.getText(),
+        Message clientData = new Message(nickNameField.getText(),
                 passwordField.getText(), loginField.getText());
 
         System.out.println(clientData.getLogin() + " " + clientData.getName() + " " + clientData.getPassword());

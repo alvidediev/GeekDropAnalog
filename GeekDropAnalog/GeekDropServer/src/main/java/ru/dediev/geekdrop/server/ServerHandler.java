@@ -1,14 +1,11 @@
 package ru.dediev.geekdrop.server;
 
-import io.netty.buffer.ByteBuf;
 import io.netty.channel.ChannelFuture;
 import io.netty.channel.ChannelFutureListener;
 import io.netty.channel.ChannelHandlerContext;
 import io.netty.channel.ChannelInboundHandlerAdapter;
 import ru.dediev.geekdrop.base.BaseHandler;
-import ru.dediev.geekdrop.model.UsersData;
-
-import java.util.Arrays;
+import ru.dediev.geekdrop.model.Message;
 
 /**
  * Для чего служит класс: основновй класс для взаимодействия с фреймворком Netty, для создания конвейера для
@@ -28,7 +25,7 @@ public class ServerHandler extends ChannelInboundHandlerAdapter {
 
     @Override
     public void channelRead(ChannelHandlerContext ctx, Object msg) throws Exception {
-        UsersData message = (UsersData) msg;
+        Message message = (Message) msg;
         System.out.println("Message from client " + message);
 
         ChannelFuture future = ctx.writeAndFlush("ok\n");

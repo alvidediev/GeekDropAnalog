@@ -10,7 +10,7 @@ import io.netty.channel.socket.SocketChannel;
 import io.netty.channel.socket.nio.NioSocketChannel;
 import io.netty.handler.codec.LineBasedFrameDecoder;
 import io.netty.handler.codec.string.StringDecoder;
-import ru.dediev.geekdrop.geekdropclient.model.UsersDataFromClient;
+import ru.dediev.geekdrop.geekdropclient.model.Message;
 
 import java.nio.charset.StandardCharsets;
 import java.util.function.Consumer;
@@ -19,7 +19,7 @@ public class NetworkConnector {
     private static final int PORT = 8888;
     private static final String LOCAL_HOST = "localhost";
 
-    public void send(UsersDataFromClient message, Consumer<String> consumer) {
+    public void send(Message message, Consumer<String> consumer) {
         EventLoopGroup workerGroup = new NioEventLoopGroup();
 
         try {
